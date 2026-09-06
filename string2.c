@@ -75,3 +75,22 @@ char* strncat2(char* dest, const char* src, size_t count) {
     *ptr = '\0';
     return dest;
 }
+
+// char* strndup2(const char *str, size_t size) {
+//     char* dup = calloc(2, sizeof(char));
+//     while (*str != '\0' && size > 0) {
+//         *dup = *str;
+//         str++;
+//         size--;
+//         dup = realloc();
+//     }
+// }
+
+char* strchr(const char* str, int ch) {
+    while (*str != '\0') {
+        if (*str == ch)
+            return str;
+        str++;
+    }
+    return NULL;
+}

@@ -39,3 +39,20 @@ int puts2(const char* str) {
     putchar('\n');
     return 1;
 }
+
+char* strncpy2(char* dest, const char* src, size_t count) {
+    char* ptr = dest;
+    
+    while (*src != '\0' && count > 0) {
+        *ptr = *src;
+        ptr++;
+        src++;
+        count--;
+    }
+    while (count > 0) {
+        *ptr = '\0';
+        ptr++;
+        count--;
+    }
+    return dest;
+}

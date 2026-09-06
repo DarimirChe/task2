@@ -12,7 +12,10 @@ int main() {
 
     char str1[10];
     strncpy2(str1, "hello", 10);
-    printf("str1 = <%s>\n", str1);
+    printf("str1 = <%s>\n\n", str1);
 
+    char str2[20] = "hello";
+    strncat2(str2, "world", 10);
+    printf("str2 = <%s>\n\n", str2);
     return 0;
 }

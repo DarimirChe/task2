@@ -42,7 +42,7 @@ int puts2(const char* str) {
 
 char* strncpy2(char* dest, const char* src, size_t count) {
     char* ptr = dest;
-    
+
     while (*src != '\0' && count > 0) {
         *ptr = *src;
         ptr++;
@@ -54,5 +54,24 @@ char* strncpy2(char* dest, const char* src, size_t count) {
         ptr++;
         count--;
     }
+    return dest;
+}
+
+char* strncat2(char* dest, const char* src, size_t count) {
+    char* ptr = dest;
+
+    while (*ptr != '\0') {
+        ptr++;
+    }
+    
+    while (count > 0) {
+        *ptr = *src;
+        ptr++;
+        src++;
+        count--;
+    }
+
+    ptr++;
+    *ptr = '\0';
     return dest;
 }

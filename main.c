@@ -18,6 +18,9 @@ int main() {
     strncat2(str2, "world", 10);
     printf("str2 = <%s>\n\n", str2);
 
+    char* dup = strndup2(str2, 5);
+    printf("dup = <%s>\n\n", dup);
+
     printf("strchr2(\"hello\", 'l') = %lld\n\n", strchr2("hello", 'l') - "hello");
 
     printf("strrchr2(\"hello\", 'l') = %lld\n\n", strrchr2("hello", 'l') - "hello");

@@ -76,15 +76,24 @@ char* strncat2(char* dest, const char* src, size_t count) {
     return dest;
 }
 
-// char* strndup2(const char *str, size_t size) {
-//     char* dup = calloc(2, sizeof(char));
-//     while (*str != '\0' && size > 0) {
-//         *dup = *str;
-//         str++;
-//         size--;
-//         dup = realloc();
-//     }
-// }
+char* strndup2(const char *str, size_t size) {
+    size_t len = 0;
+
+    while (str[len] != '\0' && len < size) {
+        len++;
+    }
+
+    char* dup = (char*) calloc(len + 1, sizeof(char));
+
+    if (dup == NULL) {
+        return NULL;
+    }
+
+    memcpy(dup, str, len);
+    dup[len] = '\0';
+
+    return dup;
+}
 
 const char* strchr2(const char* str, int ch) {
     while (*str != '\0') {

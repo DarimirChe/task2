@@ -104,3 +104,22 @@ const char* strrchr2(const char* str, int ch) {
     }
     return lastCharPtr;
 }
+
+const char* strstr2(const char* str, const char* substr) {
+    const char* ptr = substr;
+
+    while (*str != '\0') {
+        if (*str == *ptr) {
+            ptr++;
+        } else {
+            ptr = substr;
+        }
+
+        if (*ptr == '\0') {
+            return str - (ptr - substr) + 1;
+        }
+
+        str++;
+    }
+    return NULL;
+}

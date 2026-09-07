@@ -21,5 +21,7 @@ int main() {
     printf("strchr2(\"hello\", 'l') = %lld\n\n", strchr2("hello", 'l') - "hello");
 
     printf("strrchr2(\"hello\", 'l') = %lld\n\n", strrchr2("hello", 'l') - "hello");
+
+    printf("strstr2(\"aabbbbcabcc\", \"abc\") = %lld\n\n", strstr2("aabbbbcabcc", "abc") - "aabbbbcabcc");
     return 0;
 }

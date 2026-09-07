@@ -94,3 +94,13 @@ const char* strchr2(const char* str, int ch) {
     }
     return NULL;
 }
+
+const char* strrchr2(const char* str, int ch) {
+    const char* lastCharPtr = NULL;
+    while (*str != '\0') {
+        if (*str == ch)
+            lastCharPtr = str;
+        str++;
+    }
+    return lastCharPtr;
+}

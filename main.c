@@ -18,6 +18,8 @@ int main() {
     strncat2(str2, "world", 10);
     printf("str2 = <%s>\n\n", str2);
 
-    printf("strchr2(\"str2\", 'l') = %lld\n\n", strchr2(str2, 'l') - str2);
+    printf("strchr2(\"hello\", 'l') = %lld\n\n", strchr2("hello", 'l') - "hello");
+
+    printf("strrchr2(\"hello\", 'l') = %lld\n\n", strrchr2("hello", 'l') - "hello");
     return 0;
 }

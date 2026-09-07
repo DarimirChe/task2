@@ -10,5 +10,6 @@ char*  strncpy2  (char* dest, const char* src, size_t count);
 char*  strncat2  (char* dest, const char* src, size_t count);
 // char*  strndup2  (const char *str, size_t size);
 const char* strchr2(const char* str, int ch);
+const char* strrchr2(const char* str, int ch); 
 
 #endif /* STRING2_H */

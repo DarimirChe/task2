@@ -5,7 +5,6 @@ int main() {
 
     printf("strnlen_s2(\"hello world!\", 5) = %lld\n\n", strnlen_s2("hello world!", 5));
 
-
     printf("puts2(\"hello\"):\n");
     puts2("hello");
     printf("\n");

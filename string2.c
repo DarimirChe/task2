@@ -86,7 +86,7 @@ char* strncat2(char* dest, const char* src, size_t count) {
 //     }
 // }
 
-char* strchr(const char* str, int ch) {
+const char* strchr2(const char* str, int ch) {
     while (*str != '\0') {
         if (*str == ch)
             return str;

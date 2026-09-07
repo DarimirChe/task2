@@ -17,5 +17,7 @@ int main() {
     char str2[20] = "hello";
     strncat2(str2, "world", 10);
     printf("str2 = <%s>\n\n", str2);
+
+    printf("strchr2(\"str2\", 'l') = %lld\n\n", strchr2(str2, 'l') - str2);
     return 0;
 }

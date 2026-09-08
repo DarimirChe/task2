@@ -63,7 +63,7 @@ char* strncat2(char* dest, const char* src, size_t count) {
     while (*ptr != '\0') {
         ptr++;
     }
-    
+
     while (count > 0) {
         *ptr = *src;
         ptr++;
@@ -90,7 +90,7 @@ char* strndup2(const char *str, size_t size) {
     }
 
     memcpy(dup, str, len);
-    dup[len] = '\0';
+    // dup[len] = '\0';
 
     return dup;
 }
@@ -131,4 +131,45 @@ const char* strstr2(const char* str, const char* substr) {
         str++;
     }
     return NULL;
+}
+
+ssize_t getline2(char** lineptr, size_t* n, FILE* stream) {
+    if (lineptr == NULL || n == NULL || stream == NULL) {
+        return -1;
+    }
+
+    if (*lineptr == NULL) {
+        *lineptr = (char*) calloc(16, sizeof(char));
+        *n = 16 * sizeof(char);
+        if (lineptr == NULL) {
+            return -1;
+        }
+    }
+
+    int c = 0;
+    int index = 0;
+
+    while ((c = fgetc(stream)) != '\n' && c != EOF) {
+        (*lineptr)[index] = c;
+        
+        if (index * sizeof(char) > *n) {
+            char* tmpPtr = (char*) realloc(*lineptr, (*n) * 2);
+
+            if (tmpPtr == NULL) {
+                break;
+            }
+
+            *lineptr = tmpPtr;
+            (*n) *= 2;
+        }
+
+        index++;
+    }
+
+    if (index == 0 && c == EOF) {
+        return -1;
+    }
+
+    (*lineptr)[index] = '\0';
+    return index;
 }

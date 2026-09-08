@@ -1,3 +1,5 @@
+#define _GNU_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstring>
@@ -14,5 +16,6 @@ char*       strndup2  (const char *str, size_t size);
 const char* strchr2   (const char* str, int ch);
 const char* strrchr2  (const char* str, int ch); 
 const char* strstr2   (const char* str, const char* substr);
+ssize_t     getline2  (char** lineptr, size_t* n , FILE* stream);
 
 #endif /* STRING2_H */

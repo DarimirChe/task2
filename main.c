@@ -25,5 +25,19 @@ int main() {
     printf("strrchr2(\"hello\", 'l') = %lld\n\n", strrchr2("hello", 'l') - "hello");
 
     printf("strstr2(\"aabbbbcabcc\", \"abc\") = %lld\n\n", strstr2("aabbbbcabcc", "abc") - "aabbbbcabcc");
+
+
+    char* buff = (char*)calloc(100, 1);
+    size_t len = 100;
+
+    getline2(&buff, &len, fopen("a.txt", "r"));
+    printf("line in file = <%s>, len = %lld\n\n", buff, len);
+
+    printf("enter text:\n");
+    getline2(&buff, &len, stdin);
+    printf("buff = <%s>, len = %lld\n", buff, len);
+
+
+    
     return 0;
 }
